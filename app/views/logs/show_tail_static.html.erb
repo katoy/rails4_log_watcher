@@ -1,0 +1,17 @@
+<h1><%= @log %></h1>
+
+<%= form_tag('/show/rails', method: 'get') do %>
+  <%= number_field_tag 'num', @num, id: 'num', min: 1, size: 5, title: '表示する行数', style: 'width: 60px;' %>
+  <%= submit_tag '更新' %>
+<% end %>
+<%= link_to 'turbolink 更新', '/show/rails' %>
+
+<p></p>
+<div>
+  <%= @time %>
+  <pre>
+    <%- @lines.each do |line| -%>
+    <%= line %>
+    <%- end -%>
+  </pre>
+</div>

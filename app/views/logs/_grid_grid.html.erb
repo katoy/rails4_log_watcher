@@ -1,0 +1,19 @@
+<%=
+     grid(@operationallogs, show_filters: :when_filtered) do |g|
+       g.column name: 'id', attribute: "id", filter_type: :range do |row|
+         row.id
+       end
+
+       g.column name: 'status', attribute: 'status' do |row|
+         row.status
+       end
+
+       g.column name: '日時', attribute: 'created_at' do |row|
+         I18n.l row.created_at, format: :long
+       end
+
+       g.column name: 'メッセージ', attribute: 'message' do |row|
+         row.message
+       end
+     end
+%>

@@ -1,0 +1,21 @@
+<h1>DB</h1>
+
+<div id="file-list center">
+
+  <div><button class="wg-external-csv-export-button" data-grid-name="grid">CSV エクスポート (utf-8)</button></div>
+  <br>
+  表示<%= select_tag('page[per]',
+  	  options_for_select([
+  	  ['4', '4'],
+	  ['10', '10'],
+	  ['20', '20'],
+	  ['50', '50'],
+	  ['100', '100'],
+	  ['200', '200'],
+	  ['400', '400'],
+	  ['1000', '1000']
+	  ]),
+	  {:id => 'per-page'})
+  %>件
+  <%= render 'grid_grid' %>
+</div>

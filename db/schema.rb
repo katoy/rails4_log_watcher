@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101103100) do
+ActiveRecord::Schema.define(version: 20141109073643) do
 
   create_table "operationallogs", force: true do |t|
     t.string   "status"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20141101103100) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lock_version", default: 0
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "tel"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

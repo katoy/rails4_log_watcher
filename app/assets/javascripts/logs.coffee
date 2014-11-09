@@ -7,7 +7,7 @@ logs_setup = ->
     location.reload()
     @
   $(":input").bind "keyup mouseup", (event) ->
-    return if $("#tailNum") == null
+    return @ unless $("#tailNum")[0]
 
     text = $("#tailNum").val()
     tailNum = Number(text) || 0

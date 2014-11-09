@@ -1,0 +1,82 @@
+<%= form_tag(:action => 'create') do %>
+  <table>
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'name' %></td>
+      <td style="padding-right:12px;"><button class ="btn btn-default open_tr" tr_id="i001">編集</button></td>
+      <td><%= @user.name %></td>
+    </tr>
+
+    <tr id="i001" style="display:none;">
+      <td align="right" style="padding-right:12px;"><button class ="btn btn-default cancel_tr" tr_id="i001">リセット</button></td>
+      <td style="padding-right:12px;"><button class ="btn btn-default commit_tr" tr_id="i001">更新</button></td>
+      <td><%= text_field_tag 'name', @user.name,
+	      {class: "string optional form-control"} %>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'age' %></td>
+      <td></td>
+      <td><%= number_field_tag 'tag', @user.age,
+	      {class: "string optional form-control"} %></td>
+    </tr>
+
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'tel' %></td>
+      <td></td>
+      <td><%= text_field_tag 'tel', @user.tel,
+	      {class: "string optional form-control"} %></td>
+    </tr>
+
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'email' %></td>
+      <td></td>
+      <td><%= text_field_tag 'email', @user.email,
+	      {class: "string optional form-control"} %></td>
+    </tr>
+
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'password' %></td>
+      <td></td>
+      <td><%= text_field_tag 'passwprd', "",
+	      {class: "string optional form-control"} %></td>
+    </tr>
+
+    <tr>
+      <td align="right" style="padding-right:12px;"><%= label_tag 'password_conirmation' %></td>
+      <td></td>
+      <td><%= text_field_tag 'password_confirmation', "",
+	      {class: "string optional form-control"} %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+	<%= submit_tag "Update User", {:class => "btn btn-default btn-primary"} %>
+	<%= link_to "Cancel", :back,  {:class => "btn btn-default btn-primary"} %>
+      </td>
+      </td>
+  </table>
+<% end %>
+
+<script>
+  $('.open_tr').click(function(e) {
+    e.preventDefault();
+    id = '#' + $(this).attr('tr_id');
+    if ($(id).css('display') != 'none') {
+      $(this).text("取消");
+    } else {
+      $(this).text("編集");
+    }
+    $(id).toggle(300);
+  });
+  $('.cancel_tr').click(function(e) {
+    e.preventDefault();
+    id = '#' + $(this).attr('tr_id');
+  });
+  $('.commit_tr').click(function(e) {
+    e.preventDefault();
+    id = '#' + $(this).attr('tr_id');
+    $(id).toggle();
+  });
+</script>

@@ -26,6 +26,10 @@ gem 'jquery-ui-themes'
 gem 'wice_grid'
 gem 'file-tail'
 gem 'spinjs-rails'
+gem 'bcrypt'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'simple_form', '~> 3.1.0.rc1'
 
 # See http://qiita.com/yusabana/items/8ce54577d959bb085b37
 group :test, :development do

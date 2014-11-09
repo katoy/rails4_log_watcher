@@ -14,6 +14,7 @@ See
     $ bundle exec rails g wice_grid:install
     $ bundle exec rails generate bootstrap:install static
 	$ bundle exec rails g bootstrap:layout application fluid
+	$ rails generate rspec:install
 
 - Start server
 

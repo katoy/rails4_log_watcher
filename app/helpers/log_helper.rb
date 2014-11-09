@@ -2,7 +2,7 @@
 module LogHelper
 
   def log(status, message)
-    str = "#{caller.first}: message"
+    str = "#{caller.first}: #{message}"
     # puts str
 
     log = Operationallog.new

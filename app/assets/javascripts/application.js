@@ -16,5 +16,7 @@
 //= require turbolinks
 //= require jquery-ui
 //= require wice_grid
-//= require_tree .
 //= require jquery.cookie
+//= require spin
+//= require jquery.spin
+//= require_tree .

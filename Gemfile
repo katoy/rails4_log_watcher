@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'jquery-ui-themes'
 gem 'wice_grid'
 gem 'file-tail'
+gem 'spinjs-rails'
 
 # See http://qiita.com/yusabana/items/8ce54577d959bb085b37
 group :test, :development do

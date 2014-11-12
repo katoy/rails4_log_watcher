@@ -1,0 +1,12 @@
+<%= simple_form_for @mydata, url: mydata_create_path, wrapper: :horizontal_form, html: {class: 'form-horizontal'}  do |f| %>
+  <%= f.input :foo %>
+  <%= f.input :bar %>
+  <%= f.input :piyo %>
+  </p>
+
+  <label class="password optional col-sm-3 control-label"></label>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to "Cancel", root_path, {:class=>"btn btn-default btn-primary"} %>
+
+<% end %>
+

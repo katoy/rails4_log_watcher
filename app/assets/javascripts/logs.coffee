@@ -31,3 +31,15 @@ $ ($) ->
     $('body').spin(false)
     logs_setup()
     @
+
+  autoLink = ->
+    alert("x")
+    location.href = "/show/rails"
+    setTimeout("autoLink()",2000);
+
+  $("#refresh").change ->
+    if $(this).is(":checked")
+      setTimeout("autoLink()", 2000)
+    else
+      alert "un-checked"
+    @

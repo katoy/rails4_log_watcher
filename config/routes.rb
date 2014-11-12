@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get   'index',            to: 'logs#index'
   match 'show/:log',        to: 'logs#show', via: [:get, :post]
+
+  get   'mydata/edit',      to: 'mydata#edit'
+  match 'mydata/create',    to: 'mydata#create', via: [:get, :post]
 end

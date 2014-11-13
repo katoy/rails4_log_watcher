@@ -32,14 +32,22 @@ $ ($) ->
     logs_setup()
     @
 
-  autoLink = ->
-    alert("x")
-    location.href = "/show/rails"
-    setTimeout("autoLink()",2000);
+  timer = null
+  startTimer = ->
+    console.log "start timer ..."
+    timer = setInterval (->
+      $("#reload_btn").trigger('click');
+      console.log "reload ..."
+      return
+    ), 2000
+
+  stopTimer = ->
+    console.log "stop timer ..."
+    clearInterval(timer)
 
   $("#refresh").change ->
     if $(this).is(":checked")
-      setTimeout("autoLink()", 2000)
+      startTimer()
     else
-      alert "un-checked"
+      stopTimer()
     @

@@ -14,7 +14,8 @@ class LogsController < ActionController::Base
   end
 
   def get_tailNum
-    ans = (cookies[:tailNum] || 10).to_i
+    ans = 0
+    ans = cookies[:tailNum].to_i if cookies[:tailNum]
     ans = 10 if ans < 1
     cookies[:tailNum] = ans
   end
@@ -97,8 +98,9 @@ class LogsController < ActionController::Base
   end
 
   # See http://stackoverflow.com/questions/754494/reading-the-last-n-lines-of-a-file-in-ruby
-  def tail(filename, n)
+  def tail(filename, n = 10)
     ary = []
+    n = 10 if n <= 0
     begin
       File.open(filename) do |file|
         buffer = 1024
@@ -121,7 +123,7 @@ class LogsController < ActionController::Base
     rescue => ex
       ary << [ex.to_s]
     end
-    ary
+    ary[0..n -1]
   end
 
   # See http://stackoverflow.com/questions/4894434/ansi-escape-code-with-html-tags-in-ruby

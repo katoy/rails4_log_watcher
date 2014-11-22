@@ -1,7 +1,8 @@
 <h1>Log:<%= @log %> (<%= @env %>)</h1>
 
 <div id="file-list center">
-  <%= check_box_tag 'autoRefresh', true, false, {:disabled => true, :title => '未実装...'} %>自動更新
+  更新時刻 ： <%= Time.now.strftime('%Y-%m-%d %H:%M:%S') %> (<%= timeago_tag Time.zone.now, :nojs => true, :limit => 10.days.ago, :lang => :ja %>)
+  <%= check_box_tag 'autoRefresh', true, @refresh, {:id => "refresh"} %>自動更新
   <div><button class="wg-external-csv-export-button" data-grid-name="grid">CSV エクスポート (utf-8)</button></div>
   <br>
   表示<%= select_tag('perPage',

@@ -46,3 +46,12 @@ This project rocks and uses MIT-LICENSE.
 # ライセンス
 
 [MIT-LICENSE](MIT-LICENSE)
+
+# その他
+
+pandoc を利用してこのドキュメントを変換する。  
+
+    $ pandoc README.md -o 1.pdf --latex-engine=xelatex -V mainfont=Hiragino\ Kaku\ Gothic\ Pro
+    $ pandoc README.md -o 1.html --to html5 -s -S --toc -c pandoc.css
+    $ pandoc README.md -o 1.docx
+

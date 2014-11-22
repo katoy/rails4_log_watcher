@@ -1,5 +1,7 @@
+<%- require 'date' -%>
+
 <%=
-     grid(@operationallogs, show_filters: :when_filtered) do |g|
+   grid(@operationallogs, show_filters: :when_filtered) do |g|
        g.column name: 'id', attribute: "id", filter_type: :range do |row|
          row.id
        end
@@ -8,12 +10,22 @@
          row.status
        end
 
-       g.column name: '日時', attribute: 'created_at' do |row|
-         I18n.l row.created_at, format: :long
+       g.column name: '日時(created)', attribute: 'created_at', helper_style: :calendar do |row|
+         [row.created_at.strftime("%Y年 %m月 %d日"),
+          {:style => 'white-space: nowrap;'}
+         ]
        end
 
+       #g.column name: '日時(updated)', attribute: 'created_at', helper_style: :standard do |row|
+       #  [row.updated_at.to_s(:db),
+       #   {:style => 'white-space: nowrap; width: 400px;'}
+       #  ]
+       #end
+
        g.column name: 'メッセージ', attribute: 'message' do |row|
-         row.message
+         [row.message,
+          {:style => 'width: 400px;'}
+         ]
        end
      end
 %>

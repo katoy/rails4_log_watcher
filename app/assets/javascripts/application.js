@@ -19,4 +19,5 @@
 //= require jquery.cookie
 //= require spin
 //= require jquery.spin
+//= require rails-timeago-all
 //= require_tree .

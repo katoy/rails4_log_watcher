@@ -30,8 +30,9 @@ gem 'bcrypt'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form', '~> 3.1.0.rc1'
+gem 'jquery-turbolinks'
+gem 'rails-timeago'
 
-# See http://qiita.com/yusabana/items/8ce54577d959bb085b37
 group :test, :development do
   gem 'pry-rails'
   gem 'pry-doc'
@@ -60,5 +61,9 @@ group :test, :development do
 
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
+
+  # gem 'review'
+  # gem 'md2review'
+  # gem 'kindlemail'
 
 end

@@ -31,6 +31,7 @@ class LogsController < ActionController::Base
     log(:OK, "enter #{params}")
     begin
       show_params
+      @refresh = params['refresh'] != nil
       @log = params['log']
       @env = ENV['RAILS_ENV']
       @env = 'development' unless ENV['RAILS_ENV']
@@ -60,13 +61,14 @@ class LogsController < ActionController::Base
 
   def show_params
     params.permit(:log,:utf8, :num, :commit, :authenticity_token,
+                  :refresh,
                   grid: [
                     :page, :order, :order_direction, :pp, :export,
-                    f: [:message,
-                        :status,
-                        id: [:fr, :to],
-                        created_at: [:fr, :to]
-                       ]
+                      f: [:message,
+                          :status,
+                          id: [:fr, :to],
+                          created_at: [:fr, :to]
+                         ]
                   ])
     params.require(:log)
   end

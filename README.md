@@ -55,3 +55,8 @@ pandoc を利用してこのドキュメントを変換する。
     $ pandoc README.md -o 1.html --to html5 -s -S --toc -c pandoc.css
     $ pandoc README.md -o 1.docx
 
+
+DB の構造図を生成する。
+
+    $ rake erd
+

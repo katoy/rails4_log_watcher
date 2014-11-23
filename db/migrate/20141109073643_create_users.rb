@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
 
       t.timestamps
+      t.integer :lock_version, :default => 0
     end
   end
 end

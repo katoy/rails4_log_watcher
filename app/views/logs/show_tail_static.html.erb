@@ -2,7 +2,7 @@
 <div>
   表示行数：<%= number_field_tag 'tailNum', @tailNum, id: 'tailNum', min: 1, size: 5, title: '表示する行数', style: 'width: 60px;' %>
   <a href="/show/rails" id="reload_btn">表示を更新する</a>
-  <%= check_box_tag 'autoRefresh', true, @refresh, {:id => "refresh"} %>自動更新
+  <%= check_box_tag 'autoRefresh', true, @refresh, {:id => "refresh"} %>自動更新 (<span id="interval_msec"></span>)
 </div>
 
 <div>
